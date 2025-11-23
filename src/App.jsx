@@ -176,15 +176,15 @@ const ROICalculator = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '25px', marginBottom: '25px' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '13px', fontWeight: '600', marginBottom: '8px', color: '#1a1a1a', textTransform: 'uppercase' }}>Annual Salary Per Hire</label>
+              <label style={{ display: 'block', fontSize: '13px', fontWeight: '600', marginBottom: '8px', color: '#1a1a1a', textTransform: 'uppercase' }}>Annual Salary</label>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <div style={{ position: 'relative', flex: 1 }}>
-                  <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', fontSize: '15px', color: '#666', fontWeight: '500' }}>{getCurrencySymbol()}</span>
+                  <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', fontSize: '15px', color: '#666', fontWeight: '500', zIndex: 1 }}>{getCurrencySymbol()}</span>
                   <input 
                     type="number" 
                     value={inputs.annualSalary} 
                     onChange={(e) => setInputs({...inputs, annualSalary: Number(e.target.value)})} 
-                    style={{ width: '100%', height: '44px', border: '1.5px solid #D0D0D0', borderRadius: '4px', padding: '0 14px 0 36px', fontSize: '15px' }} 
+                    style={{ width: '100%', height: '44px', border: '1.5px solid #D0D0D0', borderRadius: '4px', padding: '0 14px 0 40px', fontSize: '15px' }} 
                   />
                 </div>
                 <select 
@@ -248,11 +248,12 @@ const ROICalculator = () => {
           </div>
         </div>
 
-        <div style={{ maxWidth: '1400px', margin: '0 auto 30px', overflowX: 'auto' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto 30px' }}>
           <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px', color: '#1a1a1a' }}>
             Direct Employee Costs
           </h2>
-          <div style={{ minWidth: '600px' }}>
+          <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid #E0E0E0' }}>
+            <div style={{ minWidth: '600px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', background: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
               <thead>
                 <tr style={{ background: '#0066CC', color: 'white' }}>
@@ -321,14 +322,16 @@ const ROICalculator = () => {
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
         </div>
 
-        <div style={{ maxWidth: '1400px', margin: '0 auto 30px', overflowX: 'auto' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto 30px' }}>
           <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px', color: '#1a1a1a' }}>
             Hidden Overhead & Indirect Costs
           </h2>
-          <div style={{ minWidth: '600px' }}>
+          <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid #E0E0E0' }}>
+            <div style={{ minWidth: '600px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', background: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
               <thead>
                 <tr style={{ background: '#0066CC', color: 'white' }}>
@@ -376,6 +379,7 @@ const ROICalculator = () => {
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
         </div>
 
@@ -445,10 +449,6 @@ const ROICalculator = () => {
               <input type="text" placeholder="Last Name*" style={{ padding: '14px', border: '1px solid #D0D0D0', borderRadius: '4px', fontSize: '15px' }} />
             </div>
             <input type="email" placeholder="Business Email*" style={{ width: '100%', padding: '14px', border: '1px solid #D0D0D0', borderRadius: '4px', fontSize: '15px', marginBottom: '20px' }} />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginBottom: '20px' }}>
-              <input type="number" placeholder="Number of Hires" value={inputs.numberOfHires} readOnly style={{ padding: '14px', border: '1px solid #D0D0D0', borderRadius: '4px', fontSize: '15px', background: '#F5F5F5' }} />
-              <input type="text" placeholder="Hourly Rate" value={getCurrencySymbol() + costs.agentRate} readOnly style={{ padding: '14px', border: '1px solid #D0D0D0', borderRadius: '4px', fontSize: '15px', background: '#F5F5F5' }} />
-            </div>
             <input type="tel" placeholder="Phone (Optional)" style={{ width: '100%', padding: '14px', border: '1px solid #D0D0D0', borderRadius: '4px', fontSize: '15px', marginBottom: '20px' }} />
             <button style={{ width: '100%', padding: '16px', background: '#0066CC', color: 'white', border: 'none', borderRadius: '6px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }}>
               Get My Report
