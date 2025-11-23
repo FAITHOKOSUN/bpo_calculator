@@ -177,26 +177,23 @@ const ROICalculator = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '25px', marginBottom: '25px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '13px', fontWeight: '600', marginBottom: '8px', color: '#1a1a1a', textTransform: 'uppercase' }}>Annual Salary</label>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <div style={{ position: 'relative', flex: 1 }}>
-                  <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', fontSize: '15px', color: '#666', fontWeight: '500', zIndex: 1 }}>{getCurrencySymbol()}</span>
-                  <input 
-                    type="number" 
-                    value={inputs.annualSalary} 
-                    onChange={(e) => setInputs({...inputs, annualSalary: Number(e.target.value)})} 
-                    style={{ width: '100%', height: '44px', border: '1.5px solid #D0D0D0', borderRadius: '4px', padding: '0 14px 0 40px', fontSize: '15px' }} 
-                  />
-                </div>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <input 
+                  type="number" 
+                  value={inputs.annualSalary} 
+                  onChange={(e) => setInputs({...inputs, annualSalary: Number(e.target.value)})} 
+                  style={{ flex: 1, height: '44px', border: '1.5px solid #D0D0D0', borderRadius: '4px', padding: '0 14px', fontSize: '15px' }} 
+                />
                 <select 
                   value={inputs.currency}
                   onChange={(e) => setInputs({...inputs, currency: e.target.value})}
-                  style={{ width: '110px', height: '44px', border: '1.5px solid #D0D0D0', borderRadius: '4px', padding: '0 10px', fontSize: '14px', background: 'white' }}
+                  style={{ width: '110px', height: '44px', border: '1.5px solid #D0D0D0', borderRadius: '4px', padding: '0 10px', fontSize: '14px', background: 'white', fontWeight: '500' }}
                 >
-                  <option value="GBP">GBP (£)</option>
-                  <option value="USD">USD ($)</option>
-                  <option value="EUR">EUR (€)</option>
-                  <option value="AUD">AUD</option>
-                  <option value="CAD">CAD</option>
+                  <option value="GBP">£ GBP</option>
+                  <option value="USD">$ USD</option>
+                  <option value="EUR">€ EUR</option>
+                  <option value="AUD">A$ AUD</option>
+                  <option value="CAD">C$ CAD</option>
                 </select>
               </div>
             </div>
